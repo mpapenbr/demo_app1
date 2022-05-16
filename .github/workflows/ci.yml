@@ -16,6 +16,7 @@ jobs:
     uses: ./.github/workflows/build.yml
     
   show:
+    runs-on: ubuntu-latest    
     name: show something
     needs: [build]
     steps:
