@@ -15,3 +15,9 @@ jobs:
     needs: [prep]
     uses: ./.github/workflows/build.yml
     
+  show:
+    name: show something
+    needs: [build]
+    steps:
+    - name: dummy
+      run: ls -la
