@@ -1,14 +1,17 @@
 name: Simple ci build
 on:
   push:
-    branch:
+    branches:
       - main
 jobs:
-  ci:
+  prep:
     runs-on: ubuntu-latest    
     steps:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
-      
-    - uses: ./.github/workflows/build.yml    
+
+  build:
+    name: build the stuff
+    needs: [prep]
+    uses: ./.github/workflows/build.yml
     
