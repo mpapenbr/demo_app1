@@ -14,11 +14,8 @@ jobs:
     name: build the stuff
     needs: [prep]
     uses: ./.github/workflows/build.yml
-    
-  show:
-    runs-on: ubuntu-latest    
-    name: show something
-    needs: [build]
     steps:
-    - name: dummy
+    - name: dummy (in build)
       run: ls -la
+    
+  
